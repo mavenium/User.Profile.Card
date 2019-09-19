@@ -4,6 +4,6 @@
     android:shape="oval">
 
     <stroke android:width="2dp" android:color="@android:color/white" />
-    <solid android:color="@color/toggl_normal_bg" />
+    <solid android:color="@color/toggle_normal_bg" />
 
 </shape>

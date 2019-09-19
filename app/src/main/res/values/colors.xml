@@ -6,5 +6,5 @@
 
     <color name="user_profile_master_color">#C93F12</color>
 
-    <color name="toggl_normal_bg">#C93F12</color>
+    <color name="toggle_normal_bg">#C93F12</color>
 </resources>
