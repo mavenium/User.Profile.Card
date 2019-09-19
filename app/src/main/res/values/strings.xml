@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">User Profile</string>
+
     <string name="user_profile_button_one_text">Profile</string>
     <string name="user_profile_button_two_text">Send Message</string>
     <string name="user_profile_button_tre_text">Share</string>
+
+    <string name="user_profile_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi.</string>
 </resources>

@@ -84,6 +84,17 @@
             android:background="@drawable/toggle_normal_bg"
             android:src="@drawable/ic_menu_white_24dp" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_profile_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/secondary_text_light"
+            android:text="@string/user_profile_description"
+            android:layout_below="@id/layout_user_profile_cover_frameLayout"/>
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
