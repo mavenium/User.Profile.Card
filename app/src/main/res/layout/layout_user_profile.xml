@@ -21,6 +21,14 @@
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/cover"/>
 
+            <RelativeLayout
+                android:id="@+id/layout_user_profile_reveal_relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#C93F12">
+
+            </RelativeLayout>
+
 
         </FrameLayout>
 
