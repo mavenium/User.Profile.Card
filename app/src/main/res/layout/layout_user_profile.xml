@@ -11,6 +11,8 @@
 
         <FrameLayout
             android:id="@+id/layout_user_profile_cover_frameLayout"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="@dimen/cover_frameLayout_height">
 
