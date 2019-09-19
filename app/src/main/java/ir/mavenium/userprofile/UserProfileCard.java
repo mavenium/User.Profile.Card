@@ -30,6 +30,7 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
 
     public UserProfileCard(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context);
     }
 
     private void init(Context context) {
