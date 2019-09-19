@@ -60,7 +60,6 @@
 
             </RelativeLayout>
 
-
         </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -73,6 +72,7 @@
             android:layout_alignBottom="@id/layout_user_profile_cover_frameLayout"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_profile_toggle"
             android:layout_width="@dimen/user_profile_toggle_height_width"
             android:layout_height="@dimen/user_profile_toggle_height_width"
             android:layout_alignRight="@id/layout_user_profile_cover_frameLayout"
