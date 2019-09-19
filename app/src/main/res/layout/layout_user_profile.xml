@@ -28,6 +28,34 @@
                 android:layout_height="match_parent"
                 android:background="@color/user_profile_master_color">
 
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layout_user_profile_buttons_linearLayoutCompat"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/layout_user_profile_button_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_profile_button_one_text"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/layout_user_profile_button_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_profile_button_two_text"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/layout_user_profile_button_tre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/user_cover_buttons_bg"
+                        android:text="@string/user_profile_button_tre_text"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
             </RelativeLayout>
 
 
