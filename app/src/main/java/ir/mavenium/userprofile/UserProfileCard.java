@@ -1,8 +1,13 @@
 package ir.mavenium.userprofile;
 
+import android.animation.Animator;
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -52,9 +57,76 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.user_profile_toggle) {
-            Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
+            int centerX = coverImage.getRight();
+            int centerY = coverImage.getBottom();
+            float radius = (float) Math.hypot(coverImage.getWidth(), coverImage.getHeight());
+            displayButtons(centerX, centerY, radius);
         }
 
+    }
+
+    public void displayButtons(int centerX, int centerY, float radius) {
+        if (layoutReveal.getVisibility() != VISIBLE) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Animator animator = ViewAnimationUtils.createCircularReveal(layoutReveal, centerX, centerY, 0, radius);
+                animator.setDuration(700);
+                animator.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        layoutReveal.setVisibility(VISIBLE);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        layoutButtons.setVisibility(VISIBLE);
+                        Animation fade_in = AnimationUtils.loadAnimation(rootView.getContext() ,R.anim.fade_in);
+                        layoutButtons.startAnimation(fade_in);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                });
+                animator.start();
+            } else {
+            }
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Animator animator = ViewAnimationUtils.createCircularReveal(layoutReveal, centerX, centerY, radius, 0);
+                animator.setDuration(700);
+                animator.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        layoutReveal.setVisibility(GONE);
+                        layoutButtons.setVisibility(GONE);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                });
+                animator.start();
+            } else {
+            }
+        }
     }
 
     public AppCompatImageView getCoverImage() {
