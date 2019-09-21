@@ -9,6 +9,8 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -63,7 +65,6 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
             float radius = (float) Math.hypot(centerX - coverImage.getLeft(), coverImage.getHeight());
             displayButtons(centerX, centerY, radius);
         }
-
     }
 
     public void displayButtons(int centerX, int centerY, float radius) {
