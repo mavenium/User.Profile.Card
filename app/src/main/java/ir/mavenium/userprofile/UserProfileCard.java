@@ -9,7 +9,6 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -57,7 +56,6 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.user_profile_toggle) {
-//            Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
             int centerX = coverImage.getRight();
             int centerY = coverImage.getBottom();
             float radius = (float) Math.hypot(coverImage.getWidth(), coverImage.getHeight());
@@ -68,6 +66,8 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
 
     public void displayButtons(int centerX, int centerY, float radius) {
         if (layoutReveal.getVisibility() != VISIBLE) {
+            toggleImage.setImageResource(R.drawable.ic_close_24dp);
+            toggleImage.setBackgroundResource(R.drawable.toggle_close_bg);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Animator animator = ViewAnimationUtils.createCircularReveal(layoutReveal, centerX, centerY, 0, radius);
                 animator.setDuration(700);
@@ -98,6 +98,8 @@ public class UserProfileCard extends RelativeLayout implements View.OnClickListe
             } else {
             }
         } else {
+            toggleImage.setImageResource(R.drawable.ic_menu_white_24dp);
+            toggleImage.setBackgroundResource(R.drawable.toggle_normal_bg);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Animator animator = ViewAnimationUtils.createCircularReveal(layoutReveal, centerX, centerY, radius, 0);
                 animator.setDuration(700);
